@@ -5,14 +5,15 @@ body{
 .tituloprincipal{
   color:#556B2F;
   text-align: center;
-  padding: 30px;
+  
 }
 
 .destaques{
 
   color:	#8B0000;
   text-align: center;
-  padding: 30px;
+  margin-top:0px
+  margin-bottom:0px
 }
 
 .dropdown-item{
