@@ -1,3 +1,35 @@
 body{
   background-color: rgb(128, 0, 0);
 }
+
+.tituloprincipal{
+  color:#556B2F;
+  text-align: center;
+  padding: 30px;
+}
+
+.destaques{
+
+  color:	#8B0000;
+  text-align: center;
+  padding: 30px;
+}
+
+.dropdown-item{
+    font-style: italic;
+}
+
+.descricao{
+  font-size: 25px;
+  text-align: center;
+
+}
+
+.card-body{
+  background: rgb(230,230,250);
+}
+
+.card-title{
+  color: blue;
+
+}
