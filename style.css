@@ -5,7 +5,7 @@ body{
 .tituloprincipal{
   color:#556B2F;
   text-align: center;
-  
+
 }
 
 .destaques{
@@ -33,4 +33,15 @@ body{
 .card-title{
   color: blue;
 
+}
+div#rodape{
+    height: 200px;
+  
+    width: 150%;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    top: 2000px;
+    right: 0px;
+    bottom: 10px;
 }
