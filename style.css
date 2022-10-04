@@ -34,7 +34,11 @@ body{
   color: blue;
 
 }
-div#rodape{
+#carouselExampleInterval{
+  size: 50%;
+}
+
+#rodape{
     height: 200px;
   
     width: 150%;
