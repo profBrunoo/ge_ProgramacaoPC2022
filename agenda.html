@@ -1,167 +1,108 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>AGENDA</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        
-        <link href="assets/css/bootstrap.css" rel="stylesheet">
-        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="assets/css/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
-        <link href='assets/css/fullcalendar.css' rel='stylesheet' />
-        <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="assets/js/html5shiv.js"></script>
-        <![endif]-->
-        
-        <script src='assets/js/jquery-2.0.2.min.js'></script>
-        <script src='assets/js/jquery-ui-1.10.3.custom.min.js'></script>
-        <script src="assets/js/bootstrap-transition.js"></script>
-        <script src="assets/js/bootstrap-alert.js"></script>
-        <script src="assets/js/bootstrap-modal.js"></script>
-        <script src="assets/js/bootstrap-dropdown.js"></script>
-        <script src="assets/js/bootstrap-scrollspy.js"></script>
-        <script src="assets/js/bootstrap-tab.js"></script>
-        <script src="assets/js/bootstrap-tooltip.js"></script>
-        <script src="assets/js/bootstrap-popover.js"></script>
-        <script src="assets/js/bootstrap-button.js"></script>
-        <script src="assets/js/bootstrap-collapse.js"></script>
-        <script src="assets/js/bootstrap-carousel.js"></script>
-        <script src="assets/js/bootstrap-typeahead.js"></script>
-        <script src='assets/js/fullcalendar.min.js'></script>
-        
-        <script>
-            $(document).ready(function() {
-
-                var date = new Date();
-                var d = date.getDate();
-                var m = date.getMonth();
-                var y = date.getFullYear();
-
-                var calendar = $('#calendar').fullCalendar({
-                    
-                    // configurações
-                    theme: true,        
-                    editable: true,	 
-                    selectable: true,
-                    selectHelper: true,
-                    
-                    // cabeçalhos
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
-                            
-                    // agendas cadastradas		
-                    events: "agendas.php",    	
-                    
-                    // cadastrar           
-                    select: function(start, end, allDay) {
-                        
-                        $('#modalAgenda').modal();
-                        
-                        var nomeTime = $("#nomeTime").val();
-                        
-                        /*if (nomeTime) {
-                            calendar.fullCalendar('renderEvent', {
-                                    title: nomeTime,
-                                    start: start,
-                                    end: end,
-                                    allDay: allDay
-                                },
-                                true // make the event "stick"
-                            );
-                        }*/
-                        
-                        calendar.fullCalendar('unselect');
-                        calendar.fullCalendar('refetchEvents');
-                    },
-                            
-                    // editar
-                    eventClick: function(event, element) {
-                        
-                        $("#nomeTime").val(event.title);
-                        
-                        $('#modalAgenda').modal();
-                        
-                        calendar.fullCalendar('unselect');
-                    },
-
-                    // tradução
-                    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-                    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-                    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
-                    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
-                    buttonText: {
-                        prev: '&nbsp;&#9668;&nbsp;',
-                        next: '&nbsp;&#9658;&nbsp;',
-                        prevYear: '&nbsp;&lt;&lt;&nbsp;',
-                        nextYear: '&nbsp;&gt;&gt;&nbsp;',
-                        today: 'Hoje',
-                        month: 'Mês',
-                        week: 'Semana',
-                        day: 'Dia'
-                    },		
-                    titleFormat: {
-                        month: 'MMMM yyyy',
-                        week: "d [ yyyy]{ '&#8212;'[ MMM] d MMM yyyy}",
-                        day: 'dddd, d MMM, yyyy'
-                    },
-                    columnFormat: {
-                        month: 'ddd',
-                        week: 'ddd d/M',
-                        day: 'dddd d/M'
-                    },
-                    allDayText: 'Dia todo',
-                    axisFormat: 'H:mm',
-                    timeFormat: {
-                        '': 'H(:mm)',
-                        agenda: 'H:mm{ - H:mm}'
-                    }
-                });
-            });
-        </script>
-        
-        <style>
-            body {
-                margin-top: 40px;
-                text-align: center;
-                font-size: 14px;
-                font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-            }
-
-            #calendar {
-                width: 100%;
-                margin: 0 auto;
-            }
-        </style>
-    </head>
-    <body>
-        
-        <div id='calendar'></div>
-        
-        <div id="modalAgenda" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalAgendaLabel" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="modalAgendaLabel">Agenda de horário</h3>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <fieldset>
-                        <label>Nome do time</label>
-                        <input id="nomeTime" name="nomeTime" type="text" placeholder="Nome do time…">
-                    </fieldset>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-                <button class="btn btn-primary">Salvar</button>
-            </div>
-        </div>
-    </body>
-</html>
+<link rel="stylesheet" href="agenda.css">
+<div class="calendar">
+    <div class="month"><a href="#" class="nav"><i class="fas fa-angle-left"></i></a><div>January <span class="year">2019</span></div><a href="#" class="nav"><i class="fas fa-angle-right"></i></a></div>
+    <div class="days">
+      <span>Mon</span>
+      <span>Tue</span>
+      <span>Wed</span>
+      <span>Thu</span>
+      <span>Fri</span>
+      <span>Sat</span>
+      <span>Sun</span>
+    </div>
+    <div class="dates">
+        <button>
+          <time>1</time>
+        </button>
+        <button>
+          <time>2</time>
+        </button>
+        <button>
+          <time>3</time>
+        </button>
+        <button>
+          <time>4</time>
+        </button>
+        <button>
+          <time>5</time>
+        </button>
+        <button>
+          <time>6</time>
+        </button>
+        <button>
+          <time>7</time>
+        </button>
+        <button>
+          <time>8</time>
+        </button>
+        <button>
+          <time>9</time>
+        </button>
+        <button>
+          <time>10</time>
+        </button>
+        <button>
+          <time>11</time>
+        </button>
+        <button>
+          <time>12</time>
+        </button>
+        <button>
+          <time>13</time>
+        </button>
+        <button>
+          <time>14</time>
+        </button>
+        <button>
+          <time>15</time>
+        </button>
+        <button>
+          <time>16</time>
+        </button>
+        <button>
+          <time>17</time>
+        </button>
+        <button class="today">
+          <time>18</time>
+        </button>
+        <button>
+          <time>19</time>
+        </button>
+        <button>
+          <time>20</time>
+        </button>
+        <button>
+          <time>21</time>
+        </button>
+        <button>
+          <time>22</time>
+        </button>
+        <button>
+          <time>23</time>
+        </button>
+        <button>
+          <time>24</time>
+        </button>
+        <button>
+          <time>25</time>
+        </button>
+        <button>
+          <time>26</time>
+        </button>
+        <button>
+          <time>27</time>
+        </button>
+        <button>
+          <time>28</time>
+        </button>
+        <button>
+          <time>29</time>
+        </button>
+        <button>
+          <time>30</time>
+        </button>
+        <button>
+          <time>31</time>
+        </button>
+    </div>
+  </div>
