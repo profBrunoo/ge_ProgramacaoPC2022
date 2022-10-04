@@ -1,3 +1,7 @@
+p{
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .container{
   display: flex;
   justify-content: center;
@@ -5,7 +9,3 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-p{
-  font-size: 50px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
