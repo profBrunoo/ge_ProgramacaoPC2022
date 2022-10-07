@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
 
     <link rel="stylesheet" href="style.css">
 
@@ -60,48 +66,38 @@
 
     <h4 class="destaques">Destaques </h4>
 
-    <section>
+   
 
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="imagem.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+
+
+
+          <div class="w3-container">
+            <h2>Animated Slides</h2>
+            <p>Slide or fade in an element from the top, bottom, left or right of the screen with the w3-animate-* classes.</p>
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="imagem2.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+          
+          <div class="w3-content w3-section" style="max-width:500px">
+            <img class="mySlides w3-animate-top" src="imagem.jpeg" style="width:100%">
+            <img class="mySlides w3-animate-bottom" src="imagem2.jpeg" style="width:100%">
+            <img class="mySlides w3-animate-top" src="imagem3.jpeg" style="width:100%">
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="imagem3.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-          </section>
+          
+          <script>
+          var myIndex = 0;
+          carousel();
+          
+          function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 2500);    
+          }
+          </script>
           <footer>
              <img id="rodape" src="logo.png">
           </footer>
