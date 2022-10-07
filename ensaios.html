@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
     
     <link rel="stylesheet" href="style.css">
 
@@ -50,18 +55,36 @@
         </div>
         </nav>
 
-        <div class="w3-content">
-          <img class="mySlides1" src="img_snowtops.jpg" style="width:100%">
-          <img class="mySlides1" src="img_lights.jpg" style="width:100%">
-          <img class="mySlides1" src="img_mountains.jpg" style="width:100%">
-          <img class="mySlides1" src="img_forest.jpg" style="width:100%">
-          </div>
+        <div class="w3-container">
+          <h2>Animated Slides</h2>
+          <p>Slide or fade in an element from the top, bottom, left or right of the screen with the w3-animate-* classes.</p>
+        </div>
+        
+        <div class="w3-content w3-section" style="max-width:500px">
+          <img class="mySlides w3-animate-top" src="imagem.jpeg" style="width:100%">
+          <img class="mySlides w3-animate-bottom" src="imagem2.jpeg" style="width:100%">
+          <img class="mySlides w3-animate-top" src="imagem3.jpeg" style="width:100%">
+        </div>
+        
+        <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 2500);    
+        }
+        </script>
+        
           
-          <div class="w3-content">
-          <img class="mySlides2" src="img_la.jpg" style="width:100%">
-          <img class="mySlides2" src="img_ny.jpg" style="width:100%">
-          <img class="mySlides2" src="img_chicago.jpg" style="width:100%">
-          </div>
+        
 
 
 
