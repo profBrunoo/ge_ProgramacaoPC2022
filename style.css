@@ -2,6 +2,10 @@ body{
   background-color: rgb(128, 0, 0);
 }
 
+nav{
+  position: fixed;
+}
+
 .tituloprincipal{
   color:#556B2F;
   text-align: center;
