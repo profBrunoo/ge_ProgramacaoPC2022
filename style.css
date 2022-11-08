@@ -3,7 +3,7 @@ body{
 }
 
 header{
-  position: fixed;
+  position: sticky;
 }
 
 .tituloprincipal{
