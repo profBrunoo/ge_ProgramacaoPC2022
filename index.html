@@ -59,36 +59,37 @@
    
     
     </header>
-    <h2 class="tituloprincipal">Oliveira Fotografias</h2>
-    <section>
-    <p class="descricao"> Eternize os melhores <i>momentos momentos da sua vida</i> com <b>belíssimas fotos e vídeos.</b></p>
-    </section>
+    <main>
+      <h2 class="tituloprincipal">Oliveira Fotografias</h2>
+      <section>
+      <p class="descricao"> Eternize os melhores <i>momentos momentos da sua vida</i> com <b>belíssimas fotos e vídeos.</b></p>
+      </section>
 
-    <h5 class="destaques">Destaques </h5>
-          
-          <div class="w3-content w3-section" style="max-width:300px">
-            <img class="mySlides w3-animate-top" src="imagem.jpeg" style="width:100%">
-            <img class="mySlides w3-animate-bottom" src="imagem2.jpeg" style="width:100%">
-            <img class="mySlides w3-animate-top" src="imagem3.jpeg" style="width:100%">
-          </div>
-          
-          <script>
-          var myIndex = 0;
-          carousel();
-          
-          function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-              x[i].style.display = "none";  
+      <h5 class="destaques">Destaques </h5>
+            
+            <div class="w3-content w3-section" style="max-width:300px">
+              <img class="mySlides w3-animate-top" src="imagem.jpeg" style="width:100%">
+              <img class="mySlides w3-animate-bottom" src="imagem2.jpeg" style="width:100%">
+              <img class="mySlides w3-animate-top" src="imagem3.jpeg" style="width:100%">
+            </div>
+            
+            <script>
+            var myIndex = 0;
+            carousel();
+            
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2500);    
             }
-            myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
-            x[myIndex-1].style.display = "block";  
-            setTimeout(carousel, 2500);    
-          }
-          </script>
-
+            </script>
+      </main>
 
           <footer>
              <img id="rodape" src="logo.png">
