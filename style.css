@@ -4,6 +4,7 @@ body{
 
 header{
   position: sticky;
+  background-color: rgba(150, 154, 158, 0.856);
 }
 
 .tituloprincipal{
